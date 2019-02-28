@@ -13,7 +13,14 @@ require("update-electron-app")({
 });
 
 function createWindow() {
-  mainWindow = new BrowserWindow({ width: 900, height: 680 });
+  
+  console.log(__dirname);
+
+  mainWindow = new BrowserWindow({ 
+    width: 900, 
+    height: 680,
+    icon: path.join(__dirname, '../src/logo-64x64.png')    //[1] E:\github\x1\public
+  });
   mainWindow.loadURL(
     isDev
       ? "http://localhost:3000"
@@ -21,6 +28,8 @@ function createWindow() {
   );
   mainWindow.on("closed", () => (mainWindow = null));
 }
+
+
 
 app.on("ready", createWindow);
 
