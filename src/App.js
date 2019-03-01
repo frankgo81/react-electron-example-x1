@@ -1,27 +1,39 @@
 import React, { Component } from 'react';
 // import logo from './logo-blue.png';
 import './App.css';
-import Icon from "./views/Icon"
+import StartApp from "./components/start-app/index"
+import PairHub from "./components/pair-hub/index"
+
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const appStyle={
   position: 'fixed',
   left:'195px',
-  top:'81px',
-  height:'700px',
+  top:'110px',
+  height:'670px',
   width:'336px',
   // backgroundColor:'red',
-  borderRadius:'30px'    
+  borderRadius:'30px'   ,
+  
 }
 
 class App extends Component {
 	render() {
     return ( 
+      <Router>
+
       <div className="App" style={appStyle} >
 
-             <Icon/>
-      
-      
+      <Route exact path='/' component={StartApp} />
+
+         <Route exact path='/StartApp' component={StartApp} />
+
+<Route exact path='/PairHub' component={PairHub} />
+            
+          
+
       </div>    
+      </Router>
     );
 	}
 }
