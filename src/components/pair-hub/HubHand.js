@@ -1,19 +1,11 @@
 import React , {Component} from 'react';
-import PropTypes from 'prop-types';
 import  Hub from '../common/Hub';
-import  Hand from '../common/Hand';
+import  AnimateHand from './AnimateHand';
+import  AnimateDot from '../common/AnimateDot';
 import  Text from '../common/Text';
 import  Button from '../common/Button';
 import {Link } from "react-router-dom";
-
-const handStyle={
-    "width": "100px",
-    "position": "fixed",
-    "top": "240px",
-    "left": "332px",
-    "borderRadius": "10px"
-  }
-
+ 
 
   const textStyle={
     "position": "fixed",
@@ -22,7 +14,7 @@ const handStyle={
     "width": "300px",
     "textAlign": "center"
   }
-
+ 
   const updater=(prevState, passProps)=>(
         {
             showButton: !prevState.showButton
@@ -30,12 +22,20 @@ const handStyle={
   );
 
   class HubHand extends Component {
-
-    state={
-        showButton: false,
+  
+    constructor(props) {
+      super(props);
+          
+    this.state={
+        showButton: true,
+        showDot: false,
+    }
+    
     }
 
-   showButton=()=>{  //  logMessage = () => {
+
+    showButton=()=>{  //  logMessage = () => {
+      
       this.setState(
         updater,
         () => {
@@ -43,19 +43,38 @@ const handStyle={
         }
       );
    }  
-  
+
+
+   
+   showDot=()=>{  //  logMessage = () => {
+      
+    this.setState( 
+   {
+     showDot:true
+   }
+    )
+ }  
+
     componentDidMount(){
         setTimeout( 
-              this.showButton
-         , 4000);
+               this.showDot
+          , 1000);
+          
     }
     
 	render() {
     return (    <div>
+       
         <Hub/>
-        <Hand style={handStyle} />
+       
+ 
+        { this.state.showButton?<AnimateHand  status={this.state.showButton} />   : null}
+
+        { this.state.showDot?<AnimateDot  status={this.state.showDot} />   : null}
+  
+  
         <Text style={textStyle} text="Hold and press the button on the HUB for 3 seconds util the status light starts to blink and then move to next step..."></Text>
-        {this.state.showButton &&    <Link to={'/StartApp'}><Button name="Continue to next step..." ></Button></Link> } 
+         <Link  to={'/'}>    <Button  name="Continue to next step..."  />    </Link>
 
     </div>
       

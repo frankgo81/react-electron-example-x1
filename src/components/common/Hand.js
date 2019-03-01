@@ -18,21 +18,26 @@ var defaultStyle = {
     // msTransition: 'all' // 'ms' is the only lowercase vendor prefix
 };
 
-const propTypes = {
-    style:PropTypes.object,
-    src:PropTypes.string,
-};
+// const propTypes = {
+//     style:PropTypes.object,
+//     src:PropTypes.string,
+//     ref: PropTypes.element,
+// };
 
  
 
-const Hand = (props) => {
-    return (
-        <Image src={hand}   style={!!props.style ? props.style : defaultStyle}   />           
-    );
-};
+class Hand extends Component {
 
- 
+    
 
-Hand.propTypes = propTypes;
+    render() {
+        return (
+            <Image {...this.props}  src={hand} style={!!this.props.style ? this.props.style : defaultStyle}   />           
+        );
+    }
+}
+  
+
+// Hand.propTypes = propTypes;
 
 export default Hand;

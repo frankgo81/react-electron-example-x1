@@ -20,31 +20,23 @@ var defaultStyle = {  //default style
 }
 
  
+ 
 
-
-const propTypes = {
-    className: PropTypes.string,
-    style:PropTypes.object,
-    onClick:PropTypes.func,
-    name:PropTypes.string.isRequired,
-};
-
-
-const Button = (props) => {
+const  Button = (props) => {
 
     return (
         <button  
+         {...props}
          className={props.className}
          style={!!props.style ? props.style : defaultStyle}
-         onClick={props.handleClick}
+         onClick={props.onClick}
          >
         {props.name}
         </button>
     );
 };
 
-
-Button.propTypes = propTypes;
+ 
 
 
 export default Button;

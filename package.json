@@ -8,10 +8,12 @@
     "cross-env": "5.1.6",
     "electron-is-dev": "0.3.0",
     "electron-log": "^2.2.6",
+    "gsap": "^2.1.1",
     "prop-types": "^15.7.2",
     "react": "16.4.0",
     "react-dom": "16.4.0",
     "react-router-dom": "^4.3.1",
+    "react-transition-group": "^2.6.0",
     "update-electron-app": "^1.2.0"
   },
   "devDependencies": {

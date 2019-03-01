@@ -7,21 +7,22 @@ var defaultStyle = {
 };
 
  
+// const propTypes = {
+//     style: PropTypes.object,
+//     src: PropTypes.string,
+//     ref: PropTypes.element,
+//   };
+
 
 const Image = (props) => {
  
     return (
-        <img src={props.src}   style={{...props.style, ...defaultStyle}}   />   
+        <img  name='img'  src={props.src}  style={{...props.style, ...defaultStyle}}  {...props} />   
     );
 };
 
 
-const propTypes = {
-    style: PropTypes.object,
-    src: PropTypes.string,
-  };
-
-Image.propTypes = propTypes;
+// Image.propTypes = propTypes;
 
 
 export default Image;
