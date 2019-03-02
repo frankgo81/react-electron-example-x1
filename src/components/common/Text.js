@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+ 
 
 var defaultStyle = {  //default style
     "position": "fixed",
@@ -9,12 +9,7 @@ var defaultStyle = {  //default style
     "textAlign": "center"
 }
 
-const propTypes = {
-    style:PropTypes.object,
-    text:PropTypes.string,
-};
-
-
+ 
 const Text = (props) => {
     return (
         <div>
@@ -23,8 +18,6 @@ const Text = (props) => {
     );
 };
 
-
-Text.propTypes = propTypes;
-
+ 
 
 export default Text;

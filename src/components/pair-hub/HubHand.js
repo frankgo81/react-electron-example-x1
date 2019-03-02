@@ -74,7 +74,7 @@ import {Link } from "react-router-dom";
   
   
         <Text style={textStyle} text="Hold and press the button on the HUB for 3 seconds util the status light starts to blink and then move to next step..."></Text>
-         <Link  to={'/'}>    <Button  name="Continue to next step..."  />    </Link>
+         <Link  to={'/ScanHub'}>    <Button  name="Continue to next step..."  />    </Link>
 
     </div>
       
