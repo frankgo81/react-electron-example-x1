@@ -10,7 +10,7 @@ import ScanHub from "./components/scan-hub/index"
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  
 } from "react-router-dom";
 
 const appStyle = {
